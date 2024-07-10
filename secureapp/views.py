@@ -25,6 +25,8 @@ def register(request):
         if form.is_valid():
             
             form.save()
+            
+            return redirect("two_factor:login")
         
     context = {'RegisterForm': form}
     
@@ -49,8 +51,7 @@ def user_logout(request):
 
 def account_locked(request):
     
-    
-    return render (request, "account-locked.html")
+     return render (request, "account-locked.html")
 
 
 

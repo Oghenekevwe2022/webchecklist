@@ -20,9 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('THE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,8 +54,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # Recaptcha keys
 
-RECAPTCHA_PUBLIC_KEY = '6LfKJ-0pAAAAAOiH4DQhOHTcu1-ebUAcHScCMHqy'
-RECAPTCHA_PRIVATE_KEY = '6LfKJ-0pAAAAAHzQCXjJ-FwZ8mdqMmmLxgWNsifc'
+RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
 
 # 2FA
 
@@ -196,10 +196,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = 'True'
 
-EMAIL_HOST_USER = 'elijahudi@gmail.com'   # Gmail email address
-EMAIL_HOST_PASSWORD = 'gfim fbtv yxlf ssck'  # -APP password
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')   # Gmail email address
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')  # -APP password
 
-DEFAULT_FROM_EMAIL = 'elijahudi@gmail.com'  # - Gmail email address
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')  # - Gmail email address
 
 # Pre=deployment security options
 
